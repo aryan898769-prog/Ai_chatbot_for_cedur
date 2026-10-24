@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cedur Client Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="workspace">
+      <section class="assistant-shell" aria-label="Cedur client chatbot">
+        <header class="assistant-header">
+          <div>
+            <p class="eyebrow">Cedur Web App Assistant</p>
+            <h1>Ask Cedur Guide</h1>
+            <p class="subtitle">
+              A client-facing decision-tree assistant for payroll, attendance, people, leave, settings, and support workflows.
+            </p>
+          </div>
+          <a class="cedur-link" href="https://app.cedurnow.com/login" target="_blank" rel="noreferrer">Open Cedur</a>
+        </header>
+
+        <div class="intent-bar" aria-label="Common Cedur questions">
+          <button type="button" data-prompt="What should I check first on the dashboard?">Dashboard</button>
+          <button type="button" data-prompt="How do I add or import employees?">Employees</button>
+          <button type="button" data-prompt="How do I process payroll for this month?">Run payroll</button>
+          <button type="button" data-prompt="How do I review leave and attendance before payroll?">Pre-payroll checks</button>
+          <button type="button" data-prompt="How do I create a support ticket?">Support</button>
+        </div>
+
+        <div class="saved-help" aria-label="Saved assistant questions">
+          <div id="questionCategories" class="question-categories"></div>
+          <div id="savedQuestions" class="saved-questions"></div>
+        </div>
+
+        <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+
+        <form id="chatForm" class="chat-form">
+          <label class="sr-only" for="messageInput">Message</label>
+          <input
+            id="messageInput"
+            type="text"
+            autocomplete="off"
+            placeholder="Type an issue, e.g. I am not able to generate payroll..."
+            required
+          >
+          <button type="submit">Send</button>
+        </form>
+      </section>
+
+      <aside class="guide-panel" aria-label="Cedur workflow guide">
+        <section>
+          <h2>Client Journey</h2>
+          <ol class="workflow-list">
+            <li>Check Dashboard totals and current-month payroll summary.</li>
+            <li>Review People records, salary structures, benefits, and tax declarations.</li>
+            <li>Verify attendance, leave applications, holidays, and leave balances.</li>
+            <li>Generate payroll, review totals, then use payroll records for reporting.</li>
+            <li>Use Tickets for support and Settings for access, attendance, and advance policies.</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>Module Map</h2>
+          <div id="moduleMap" class="module-map"></div>
+        </section>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
